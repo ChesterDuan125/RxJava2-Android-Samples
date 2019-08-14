@@ -60,6 +60,33 @@ public class IntervalExampleActivity extends AppCompatActivity {
                 // Be notified on the main thread
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(getObserver()));
+
+
+        disposables.add(Observable.interval(500, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableObserver<Long>() {
+                    @Override
+                    protected void onStart() {
+                        super.onStart();
+
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                }));
     }
 
     private Observable<? extends Long> getObservable() {

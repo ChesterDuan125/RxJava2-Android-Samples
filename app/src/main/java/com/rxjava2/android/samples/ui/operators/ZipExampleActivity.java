@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -38,6 +39,7 @@ public class ZipExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
         textView = findViewById(R.id.textView);
+        setDes();
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,10 +63,10 @@ public class ZipExampleActivity extends AppCompatActivity {
                         return Utils.filterUserWhoLovesBoth(cricketFans, footballFans);
                     }
                 })
-                // Run on a background thread
-                .subscribeOn(Schedulers.io())
-                // Be notified on the main thread
-                .observeOn(AndroidSchedulers.mainThread())
+//                // Run on a background thread
+//                .subscribeOn(Schedulers.io())
+//                // Be notified on the main thread
+//                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(getObserver());
     }
 
@@ -72,24 +74,32 @@ public class ZipExampleActivity extends AppCompatActivity {
         return Observable.create(new ObservableOnSubscribe<List<User>>() {
             @Override
             public void subscribe(ObservableEmitter<List<User>> e) {
+                textView.append("getCricketFansObservable  subscribe \n");
                 if (!e.isDisposed()) {
+                    textView.append("getCricketFansObservable  onNext \n");
                     e.onNext(Utils.getUserListWhoLovesCricket());
+
+                    textView.append("getCricketFansObservable  onComplete \n");
                     e.onComplete();
                 }
             }
-        }).subscribeOn(Schedulers.io());
+        });
     }
 
     private Observable<List<User>> getFootballFansObservable() {
         return Observable.create(new ObservableOnSubscribe<List<User>>() {
             @Override
             public void subscribe(ObservableEmitter<List<User>> e) {
+                textView.append("getFootballFansObservable  subscribe \n");
                 if (!e.isDisposed()) {
+                    textView.append("getFootballFansObservable  onNext \n");
                     e.onNext(Utils.getUserListWhoLovesFootball());
+
+                    textView.append("getFootballFansObservable  onComplete \n");
                     e.onComplete();
                 }
             }
-        }).subscribeOn(Schedulers.io());
+        });
     }
 
     private Observer<List<User>> getObserver() {
@@ -98,6 +108,7 @@ public class ZipExampleActivity extends AppCompatActivity {
             @Override
             public void onSubscribe(Disposable d) {
                 Log.d(TAG, " onSubscribe : " + d.isDisposed());
+                textView.setText("onSubscribe");
             }
 
             @Override
@@ -126,6 +137,58 @@ public class ZipExampleActivity extends AppCompatActivity {
             }
         };
     }
+
+    /* ======================================= 分割线 ========================================= */
+
+
+    public void practice(View view){
+        Observable.zip(getCricketFansObservable(), getFootballFansObservable(), new BiFunction<List<User>, List<User>, List<User>>() {
+            @Override
+            public List<User> apply(List<User> users, List<User> users2) throws Exception {
+                textView.append("BiFunction apply \n" );
+                return Utils.filterUserWhoLovesBoth(users, users2);
+            }
+        })
+                .subscribe(new Observer<List<User>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        textView.setText("onSubcribe :  isDespond = " + d.isDisposed() + "\n");
+                    }
+
+                    @Override
+                    public void onNext(List<User> users) {
+                        textView.append("onNext \n");
+
+                        for (User user:users) {
+                            textView.append("onNext : " + user.firstname + "\n");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        textView.append("onError : " + e.toString() + "\n");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        textView.append("onComplete \n");
+                    }
+                });
+
+    }
+
+    public void showDes(View view){
+        setDes();
+    }
+
+    private void setDes(){
+        textView.setText("");
+    }
+
+
+//
+//    组合操作符
+// 会将多个被观察者合并，根据各个被观察者发送事件的顺序一个个结合起来，最终发送的事件数量会与源 Observable 中最少事件的数量一样
 
 
 }

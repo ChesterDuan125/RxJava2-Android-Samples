@@ -41,6 +41,9 @@ import com.rxjava2.android.samples.ui.operators.ZipExampleActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * 操作符相关示例
+ */
 public class OperatorsActivity extends AppCompatActivity {
 
     @Override
@@ -49,11 +52,11 @@ public class OperatorsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_operators);
     }
 
-    public void startSimpleActivity(View view) {
+    public void startSimpleActivity(View view) { // 已学习
         startActivity(new Intent(OperatorsActivity.this, SimpleExampleActivity.class));
     }
 
-    public void startMapActivity(View view) {
+    public void startMapActivity(View view) { // 已学习
         startActivity(new Intent(OperatorsActivity.this, MapExampleActivity.class));
     }
 

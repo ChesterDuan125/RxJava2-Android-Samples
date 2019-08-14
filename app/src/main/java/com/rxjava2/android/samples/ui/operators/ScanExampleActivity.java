@@ -48,6 +48,7 @@ public class ScanExampleActivity extends AppCompatActivity {
                 .scan(new BiFunction<Integer, Integer, Integer>() {
                     @Override
                     public Integer apply(Integer int1, Integer int2) {
+                        Log.e(TAG,int1 + "+" + int2);
                         return int1 + int2;
                     }
                 })

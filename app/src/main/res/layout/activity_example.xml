@@ -13,12 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/doSomeWork"
-        android:textAllCaps="false"
         android:textColor="@android:color/black" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/textView"
@@ -27,5 +27,21 @@
             android:textColor="@android:color/black" />
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/btn_practice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="运行模仿代码示例"
+        android:textColor="@android:color/black"
+        android:onClick="practice"/>
+
+    <Button
+        android:id="@+id/btn_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="本节代码示例及知识点说明"
+        android:textColor="@android:color/black"
+        android:onClick="showDes"/>
 
 </LinearLayout>
