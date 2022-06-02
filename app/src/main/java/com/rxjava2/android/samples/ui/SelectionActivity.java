@@ -9,8 +9,10 @@ import com.rxjava2.android.samples.R;
 import com.rxjava2.android.samples.ui.cache.CacheExampleActivity;
 import com.rxjava2.android.samples.ui.compose.ComposeOperatorExampleActivity;
 import com.rxjava2.android.samples.ui.networking.NetworkingActivity;
+import com.rxjava2.android.samples.ui.operators.OperatorsActivity;
 import com.rxjava2.android.samples.ui.pagination.PaginationActivity;
 import com.rxjava2.android.samples.ui.rxbus.RxBusActivity;
+import com.rxjava2.android.samples.ui.rxjava.RxJavaBaseActivity;
 import com.rxjava2.android.samples.ui.search.SearchActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,10 @@ public class SelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
+    }
+
+    public void startRxJavaBaseActivity(View view) {
+        startActivity(new Intent(SelectionActivity.this, RxJavaBaseActivity.class));
     }
 
     public void startOperatorsActivity(View view) {

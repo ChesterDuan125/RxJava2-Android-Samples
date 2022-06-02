@@ -8,10 +8,11 @@
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".ui.SelectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +21,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.OperatorsActivity"
+            android:name=".ui.rxjava.RxJavaBaseActivity"
+            android:label="@string/base"/>
+        <activity
+            android:name=".ui.rxjava.GettingStartedActivity"
+            android:label="@string/getting_started"/>
+        <activity
+            android:name=".ui.rxjava.DoOperatorsActivity"
+            android:label="@string/doOperators"/>
+        <activity
+            android:name=".ui.rxjava.Cold2HotActivity"
+            android:label="@string/cold2Hot"/>
+        <activity
+            android:name=".ui.rxjava.Hot2ColdActivity"
+            android:label="@string/hot2cold"/>
+        <activity
+            android:name=".ui.rxjava.FlowableActivity"
+            android:label="@string/flowable"/>
+        <activity
+            android:name=".ui.rxjava.SingleActivity"
+            android:label="@string/single"/>
+       <activity
+            android:name=".ui.rxjava.CompletableActivity"
+            android:label="@string/completable"/>
+       <activity
+            android:name=".ui.rxjava.MaybeActivity"
+            android:label="@string/maybe"/>
+        <activity
+            android:name=".ui.operators.OperatorsActivity"
             android:label="@string/operators" />
         <activity
             android:name=".ui.networking.NetworkingActivity"
@@ -133,12 +161,12 @@
         <activity
             android:name=".ui.operators.SwitchMapExampleActivity"
             android:label="@string/switch_map" />
-
-        <activity android:name=".ui.operators.TakeWhileExampleActivity"
-            android:label="@string/take_while"/>
-
-        <activity android:name=".ui.operators.TakeUntilExampleActivity"
-            android:label="@string/take_until"/>
+        <activity
+            android:name=".ui.operators.TakeWhileExampleActivity"
+            android:label="@string/take_while" />
+        <activity
+            android:name=".ui.operators.TakeUntilExampleActivity"
+            android:label="@string/take_until" />
     </application>
 
 </manifest>

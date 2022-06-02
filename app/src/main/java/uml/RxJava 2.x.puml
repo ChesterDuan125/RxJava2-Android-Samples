@@ -1,0 +1,26 @@
+@startmindmap
+'https://plantuml.com/mindmap-diagram
+
+title RxJava 2.x
+
++ RxJava 2.x <&flag>
+ ** 五种观察者模式
+
+
+ ** Cold Observable 和 Hot Observable
+
+ ** 操作符
+
+ ** 线程调度
+
+ ** Disposable
+
+++ 并行编程
+
+ ** 遵循Reactive Streams规范
+
+ ** Flowable背压策略
+
+ ** Transformer
+
+@endmindmap

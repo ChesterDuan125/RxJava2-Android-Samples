@@ -1,4 +1,4 @@
-package com.rxjava2.android.samples.ui.operators;
+package com.rxjava2.android.samples.ui.rxjava;
 
 import com.rxjava2.android.samples.ui.BaseExampleActivity;
 
@@ -11,9 +11,12 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 
-public class SimpleExampleActivity extends BaseExampleActivity {
-    private static final String TAG = "SimpleExampleActivity";
+/**
+ * 入门示例
+ */
+public class GettingStartedActivity extends BaseExampleActivity {
 
+    @Override
     public void practice() {
         /* 完整写法 */
         // 一个函数式接口，用于 观察者Observer 订阅 被观察者Observable 后，接收一个发射器Emitter，用于发送数据
@@ -34,6 +37,9 @@ public class SimpleExampleActivity extends BaseExampleActivity {
                 }
             }
         };
+        // 创建被观察者
+        Observable<String> observable = Observable.create(observableOnSubscribe);
+
         // 创建2个观察者
         Observer<String> observer1 = new Observer<String>() {
             private Disposable mDisposable;
@@ -90,13 +96,12 @@ public class SimpleExampleActivity extends BaseExampleActivity {
                 logcatE("onComplete 2");
             }
         };
-        // 创建被观察者
-        Observable<String> observable = Observable.create(observableOnSubscribe);
         // 订阅
         observable.subscribe(observer1);
+
         observable.subscribe(observer2);
 
-        logcatE(">>>>>>>>>>>>>>>>>>");
+        logcatE(">>>>>>>>>>>>>>>>>> 简写方式");
 
         /* 简写方式 */
         Observable.just("Hello", "RxJava")
@@ -150,6 +155,9 @@ public class SimpleExampleActivity extends BaseExampleActivity {
                         "                }\n" +
                         "            }\n" +
                         "        };\n" +
+                        "        // 创建被观察者\n" +
+                        "        Observable<String> observable = Observable.create(observableOnSubscribe);\n" +
+                        "\n" +
                         "        // 创建2个观察者\n" +
                         "        Observer<String> observer1 = new Observer<String>() {\n" +
                         "            private Disposable mDisposable;\n" +
@@ -206,13 +214,12 @@ public class SimpleExampleActivity extends BaseExampleActivity {
                         "                logcatE(\"onComplete 2\");\n" +
                         "            }\n" +
                         "        };\n" +
-                        "        // 创建被观察者\n" +
-                        "        Observable<String> observable = Observable.create(observableOnSubscribe);\n" +
                         "        // 订阅\n" +
                         "        observable.subscribe(observer1);\n" +
+                        "\n" +
                         "        observable.subscribe(observer2);\n" +
                         "\n" +
-                        "        logcatE(\">>>>>>>>>>>>>>>>>>\");\n" +
+                        "        logcatE(\">>>>>>>>>>>>>>>>>> 简写方式\");\n" +
                         "\n" +
                         "        /* 简写方式 */\n" +
                         "        Observable.just(\"Hello\", \"RxJava\")\n" +

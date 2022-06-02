@@ -38,4 +38,7 @@ dependencies {
 
     // FastAndroidNetworking Dependency
     implementation 'com.amitshekhar.android:rx2-android-networking:1.0.2'
+
+    // show code
+    implementation 'thereisnospon.codeview:codeview:0.3.1'
 }

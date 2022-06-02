@@ -1,43 +1,10 @@
-package com.rxjava2.android.samples.ui;
+package com.rxjava2.android.samples.ui.operators;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.rxjava2.android.samples.R;
-import com.rxjava2.android.samples.ui.operators.AsyncSubjectExampleActivity;
-import com.rxjava2.android.samples.ui.operators.BehaviorSubjectExampleActivity;
-import com.rxjava2.android.samples.ui.operators.BufferExampleActivity;
-import com.rxjava2.android.samples.ui.operators.CompletableObserverExampleActivity;
-import com.rxjava2.android.samples.ui.operators.ConcatExampleActivity;
-import com.rxjava2.android.samples.ui.operators.DebounceExampleActivity;
-import com.rxjava2.android.samples.ui.operators.DeferExampleActivity;
-import com.rxjava2.android.samples.ui.operators.DelayExampleActivity;
-import com.rxjava2.android.samples.ui.operators.DisposableExampleActivity;
-import com.rxjava2.android.samples.ui.operators.DistinctExampleActivity;
-import com.rxjava2.android.samples.ui.operators.FilterExampleActivity;
-import com.rxjava2.android.samples.ui.operators.FlowableExampleActivity;
-import com.rxjava2.android.samples.ui.operators.IntervalExampleActivity;
-import com.rxjava2.android.samples.ui.operators.LastOperatorExampleActivity;
-import com.rxjava2.android.samples.ui.operators.MapExampleActivity;
-import com.rxjava2.android.samples.ui.operators.MergeExampleActivity;
-import com.rxjava2.android.samples.ui.operators.PublishSubjectExampleActivity;
-import com.rxjava2.android.samples.ui.operators.ReduceExampleActivity;
-import com.rxjava2.android.samples.ui.operators.ReplayExampleActivity;
-import com.rxjava2.android.samples.ui.operators.ReplaySubjectExampleActivity;
-import com.rxjava2.android.samples.ui.operators.ScanExampleActivity;
-import com.rxjava2.android.samples.ui.operators.SimpleExampleActivity;
-import com.rxjava2.android.samples.ui.operators.SingleObserverExampleActivity;
-import com.rxjava2.android.samples.ui.operators.SkipExampleActivity;
-import com.rxjava2.android.samples.ui.operators.SwitchMapExampleActivity;
-import com.rxjava2.android.samples.ui.operators.TakeExampleActivity;
-import com.rxjava2.android.samples.ui.operators.TakeUntilExampleActivity;
-import com.rxjava2.android.samples.ui.operators.TakeWhileExampleActivity;
-import com.rxjava2.android.samples.ui.operators.ThrottleFirstExampleActivity;
-import com.rxjava2.android.samples.ui.operators.ThrottleLastExampleActivity;
-import com.rxjava2.android.samples.ui.operators.TimerExampleActivity;
-import com.rxjava2.android.samples.ui.operators.WindowExampleActivity;
-import com.rxjava2.android.samples.ui.operators.ZipExampleActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
