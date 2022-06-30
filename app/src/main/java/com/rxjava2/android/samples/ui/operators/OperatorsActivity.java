@@ -150,4 +150,14 @@ public class OperatorsActivity extends AppCompatActivity {
     public void startTakeUntilActivity(View view) {
         startActivity(new Intent(OperatorsActivity.this, TakeUntilExampleActivity.class));
     }
+
+    public void startCreateOperatorActivity(View view) {
+        startActivity(new Intent(OperatorsActivity.this, OperatorsCreateActivity.class));
+
+    }
+
+    public void startToolsActivity(View view) {
+        startActivity(new Intent(OperatorsActivity.this, OperatorsToolsActivity.class));
+
+    }
 }

@@ -19,54 +19,96 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startGettingStarted"
-            android:text="@string/getting_started"
+            android:text="入门示例"
             android:textColor="@android:color/black" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startDoOperators"
-            android:text="@string/doOperators"
+            android:text="do操作符"
             android:textColor="@android:color/black" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="startCold2Hot"
-            android:text="@string/cold2Hot"
+            android:onClick="startCold2HotPublish"
+            android:text="Observable cold2hot: publish()"
+            android:textColor="@android:color/black" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startCold2HotSubject"
+            android:text="Observable cold2hot: Subject"
+            android:textColor="@android:color/black" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startCold2HotPorcessor"
+            android:text="Observable cold2hot: Processor"
             android:textColor="@android:color/black" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="startHot2Cold"
-            android:text="@string/hot2cold"
+            android:onClick="startHot2ColdRefCount"
+            android:text="Observable hot2cold: refCount()"
+            android:textColor="@android:color/black" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startHot2ColdShare"
+            android:text="Observable hot2cold: share()"
             android:textColor="@android:color/black" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startFlowable"
-            android:text="@string/flowable"
+            android:text="Flowable入门"
             android:textColor="@android:color/black" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startSingle"
-            android:text="@string/single"
+            android:text="Single入门"
             android:textColor="@android:color/black" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startCompletable"
-            android:text="@string/completable"
+            android:text="Completable入门"
             android:textColor="@android:color/black" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startMaybe"
-            android:text="@string/maybe"
+            android:text="Maybe入门"
+            android:textColor="@android:color/black" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startAsyncSubject"
+            android:text="AsyncSubject入门"
+            android:textColor="@android:color/black" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startBehaviorSubject"
+            android:text="BehaviorSubject入门"
+            android:textColor="@android:color/black" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startReplaySubject"
+            android:text="ReplaySubject入门"
+            android:textColor="@android:color/black" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startPublishSubject"
+            android:text="PublishSubject入门"
             android:textColor="@android:color/black" />
 
     </LinearLayout>

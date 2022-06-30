@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!--主页-->
         <activity android:name=".ui.SelectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,36 +21,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--Rxjava基础-->
         <activity
             android:name=".ui.rxjava.RxJavaBaseActivity"
             android:label="@string/base"/>
         <activity
-            android:name=".ui.rxjava.GettingStartedActivity"
-            android:label="@string/getting_started"/>
-        <activity
-            android:name=".ui.rxjava.DoOperatorsActivity"
-            android:label="@string/doOperators"/>
-        <activity
-            android:name=".ui.rxjava.Cold2HotActivity"
-            android:label="@string/cold2Hot"/>
-        <activity
-            android:name=".ui.rxjava.Hot2ColdActivity"
-            android:label="@string/hot2cold"/>
-        <activity
-            android:name=".ui.rxjava.FlowableActivity"
-            android:label="@string/flowable"/>
-        <activity
-            android:name=".ui.rxjava.SingleActivity"
-            android:label="@string/single"/>
-       <activity
-            android:name=".ui.rxjava.CompletableActivity"
-            android:label="@string/completable"/>
-       <activity
-            android:name=".ui.rxjava.MaybeActivity"
-            android:label="@string/maybe"/>
+            android:name=".ui.rxjava.RxjavaBaseSampleActivity"/>
+
+        <!--操作符-->
         <activity
             android:name=".ui.operators.OperatorsActivity"
             android:label="@string/operators" />
+        <!--操作符-创建-->
+        <activity
+            android:name=".ui.operators.OperatorsCreateActivity"
+            android:label="@string/operators_create" />
+        <activity
+            android:name=".ui.operators.OperatorsCreateSampleActivity"/>
+
+        <!--操作符-工具-->
+        <activity
+            android:name=".ui.operators.OperatorsToolsActivity"
+            android:label="@string/operators_tools" />
+        <activity
+            android:name=".ui.operators.OperatorsToolsSampleActivity"/>
+
+
         <activity
             android:name=".ui.networking.NetworkingActivity"
             android:label="@string/networking" />

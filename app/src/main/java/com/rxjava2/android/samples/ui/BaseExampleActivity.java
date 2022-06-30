@@ -1,5 +1,7 @@
 package com.rxjava2.android.samples.ui;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -13,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.rxjava2.android.samples.R;
+import com.rxjava2.android.samples.ui.operators.OperatorsCreateSampleActivity;
 
 import thereisnospon.codeview.CodeView;
 import thereisnospon.codeview.CodeViewTheme;
@@ -28,8 +31,20 @@ public abstract class BaseExampleActivity extends AppCompatActivity {
     protected TextView tvRunPractice;
     protected View svRun;
 
+    private static final String EXTRA_OPERATOR_TITLE = "operator";
+    public String mOperator;
+
+    public static void actionStart(Activity fromActivity, Class<? extends Activity> toActivity, String operator) {
+        Intent intent = new Intent(fromActivity, toActivity);
+        intent.putExtra(EXTRA_OPERATOR_TITLE, operator);
+        fromActivity.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        Intent intent = getIntent();
+        mOperator = intent.getStringExtra(EXTRA_OPERATOR_TITLE);
+        setTitle(mOperator);
         super.onCreate(savedInstanceState);
         tag = getClass().getSimpleName();
         setContentView(getLayoutId());
@@ -55,9 +70,7 @@ public abstract class BaseExampleActivity extends AppCompatActivity {
         btnRunPractice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                codeView.setVisibility(View.GONE);
-                tvRunPractice.setText("");
-                svRun.setVisibility(View.VISIBLE);
+                beforeShowRun();
                 practice();
             }
         });
@@ -65,11 +78,21 @@ public abstract class BaseExampleActivity extends AppCompatActivity {
         btnDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                svRun.setVisibility(View.GONE);
-                codeView.setVisibility(View.VISIBLE);
+                beforeShowCode();
                 showCode();
             }
         });
+    }
+
+    protected void beforeShowCode() {
+        svRun.setVisibility(View.GONE);
+        codeView.setVisibility(View.VISIBLE);
+    }
+
+    protected void beforeShowRun() {
+        codeView.setVisibility(View.GONE);
+        tvRunPractice.setText("");
+        svRun.setVisibility(View.VISIBLE);
     }
 
     private void showResult(String s, String color){

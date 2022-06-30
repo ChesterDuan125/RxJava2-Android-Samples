@@ -1,6 +1,5 @@
 package com.rxjava2.android.samples.ui.rxjava;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -9,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.rxjava2.android.samples.R;
 
 /**
- * RxJava 基础
+ * RxJava基础知识列表
  */
 public class RxJavaBaseActivity extends AppCompatActivity {
 
@@ -20,34 +19,56 @@ public class RxJavaBaseActivity extends AppCompatActivity {
     }
 
     public void startGettingStarted(View view) {
-        startActivity(new Intent(this, GettingStartedActivity.class));
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_GETTING_START);
     }
 
     public void startDoOperators(View view) {
-        startActivity(new Intent(this, DoOperatorsActivity.class));
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_DO_OPERATOR);
     }
 
-    public void startCold2Hot(View view) {
-        startActivity(new Intent(this, Cold2HotActivity.class));
+    public void startCold2HotPublish(View view) {
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_COLD2HOT_PUBLISH);
+    }
+    public void startCold2HotSubject(View view) {
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_COLD2HOT_SUBJECT);
+    }
+    public void startCold2HotPorcessor(View view) {
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_COLD2HOT_PROCESSOR);
     }
 
-    public void startHot2Cold(View view) {
-        startActivity(new Intent(this, Hot2ColdActivity.class));
+    public void startHot2ColdRefCount(View view) {
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_HOT2COLD_REFCOUNT);
+    }
+    public void startHot2ColdShare(View view) {
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_HOT2COLD_SHARE);
     }
 
     public void startFlowable(View view) {
-        startActivity(new Intent(this, FlowableActivity.class));
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_FLOWABLE);
     }
 
     public void startSingle(View view) {
-        startActivity(new Intent(this, SingleActivity.class));
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_SINGLE);
     }
 
     public void startCompletable(View view) {
-        startActivity(new Intent(this, CompletableActivity.class));
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_COMPLETABLE);
     }
 
     public void startMaybe(View view) {
-        startActivity(new Intent(this, MaybeActivity.class));
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_MAYBE);
+    }
+
+    public void startAsyncSubject(View view) {
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_SUBJECT_ASYNC);
+    }
+    public void startBehaviorSubject(View view) {
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_SUBJECT_BEHAVIOR);
+    }
+    public void startReplaySubject(View view) {
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_SUBJECT_REPLAY);
+    }
+    public void startPublishSubject(View view) {
+        RxjavaBaseSampleActivity.actionStart(this, RxjavaBaseSampleActivity.class, RxjavaBaseSampleActivity.BASE_SUBJECT_PUBLISH);
     }
 }

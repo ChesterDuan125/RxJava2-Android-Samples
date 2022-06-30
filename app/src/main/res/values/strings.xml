@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">RxJava2秘籍</string>
     <string name="base">RxJava基础</string>
-    <string name="getting_started">入门示例</string>
-
     <string name="operators">Operators</string>
+    <string name="operators_create">创建操作符</string>
+    <string name="operators_tools">工具操作符</string>
+
+
     <string name="networking">Networking</string>
     <string name="cache">Cache</string>
     <string name="pagination">Pagination</string>
@@ -48,11 +50,6 @@
     <string name="switch_map">Switch Map</string>
     <string name="take_while">Take While</string>
     <string name="take_until">Take Until</string>
-    <string name="doOperators">do操作符</string>
-    <string name="cold2Hot">Cold Observable转换为Hot Observable</string>
-    <string name="hot2cold">Hot Observable转换为Cold Observable</string>
-    <string name="flowable">Flowable入门</string>
-    <string name="single">Single入门</string>
-    <string name="completable">Completable入门</string>
-    <string name="maybe">Maybe入门</string>
+
+
 </resources>
