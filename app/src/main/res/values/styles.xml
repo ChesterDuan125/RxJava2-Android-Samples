@@ -10,4 +10,9 @@
         <item name="android:lineSpacingExtra">5dp</item>
     </style>
 
+    <style name="ButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
 </resources>

@@ -22,4 +22,13 @@ public class OperatorsToolsActivity extends AppCompatActivity {
     public void startRepeat(View view) {
         OperatorsToolsSampleActivity.actionStart(this, OperatorsToolsSampleActivity.class, OperatorsToolsSampleActivity.OPERATOR_REPEAT);
     }
+
+    public void startRepeatWhen(View view) {
+        OperatorsToolsSampleActivity.actionStart(this, OperatorsToolsSampleActivity.class, OperatorsToolsSampleActivity.OPERATOR_REPEAT_WHEN);
+    }
+
+    public void startRepeatUntil(View view) {
+        OperatorsToolsSampleActivity.actionStart(this, OperatorsToolsSampleActivity.class, OperatorsToolsSampleActivity.OPERATOR_REPEAT_UNTIL);
+
+    }
 }

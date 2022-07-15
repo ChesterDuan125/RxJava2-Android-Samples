@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RxJava2秘籍</string>
+    <string name="app_name">RxJava2手册</string>
     <string name="base">RxJava基础</string>
     <string name="operators">Operators</string>
     <string name="operators_create">创建操作符</string>
